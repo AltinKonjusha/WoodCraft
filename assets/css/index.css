@@ -1,0 +1,68 @@
+:root {
+  --brown-dark: #4a2f19;
+  --brown-mid: #795734;
+  --brown-light: #d1a76b;
+  --beige: #f8e9d2;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--brown-dark);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.navbar-brand, .nav-link {
+  color: var(--beige) !important;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--brown-light) !important;
+}
+.btn-wood {
+  background-color: var(--brown-light);
+  color: #3b2412 !important;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.btn-wood:hover {
+  background-color: var(--brown-mid);
+  color: #fff !important;
+}
+
+/* Header */
+.hero {
+  background: url('https://images.unsplash.com/photo-1606813902945-89d1c511b0b0?q=80&w=1200') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+#productRow {
+    padding-top: 12vh;
+}
+
+/* Product Cards */
+.card {
+  border: none;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+.card-body {
+  background-color: #fff;
+}
+
+/* Footer */
+footer {
+  background: var(--brown-dark);
+  color: var(--beige);
+  padding: 25px 0;
+}
+.product-img { 
+    max-width: 100%;
+    height: 90vh;
+} 
