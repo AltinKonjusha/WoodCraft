@@ -1,3 +1,73 @@
+/* Slider */
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: var(--brown-dark);
+}
+
 :root {
   --brown-dark: #4a2f19;
   --brown-mid: #795734;
@@ -30,14 +100,34 @@
 
 /* Header */
 .hero {
-  background: url('https://images.unsplash.com/photo-1606813902945-89d1c511b0b0?q=80&w=1200') center/cover no-repeat;
-  height: 70vh;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  /*background-image: url('assets/img/HeaderBg.png');*/
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  color: #fff;
+  z-index: 1;
+}
+
 
 #productRow {
     padding-top: 12vh;
@@ -62,7 +152,7 @@ footer {
   color: var(--beige);
   padding: 25px 0;
 }
-.product-img { 
+/*.product-img { 
     max-width: 100%;
     height: 90vh;
 } 
