@@ -18,7 +18,7 @@
 
 .slide img {
   width: 100%;
-  height: 300px;
+  height: 50vh;
   object-fit: cover;
 }
 
@@ -117,7 +117,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--brown-mid);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,7 +152,7 @@ footer {
   color: var(--beige);
   padding: 25px 0;
 }
-/*.product-img { 
+.product-img { 
     max-width: 100%;
     height: 90vh;
 } 
