@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Sign Up — Woodcraft</title>
     <link rel="stylesheet" href="assets/css/form.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -21,39 +25,38 @@
                 </p>
 
                 <form id="signupForm" autocomplete="on" novalidate>
+
                     <label for="fullName">Full name</label>
                     <input id="fullName" name="fullName" type="text" placeholder="Jane Doe" required />
 
                     <label for="signupEmail">Email</label>
-                    <input id="signupEmail" name="email" type="email" placeholder="example@email.com" required />
+                    <input id="signupEmail" name="signupEmail" type="email" placeholder="example@email.com" required />
 
                     <label for="signupPassword">Password</label>
-                    <input id="signupPassword" name="password" type="password" placeholder="At least 8 characters"
-                        minlength="8" required />
+                    <input id="signupPassword" name="signupPassword" type="password"
+                        placeholder="At least 8 characters" minlength="8" required />
 
                     <label for="signupConfirm">Confirm password</label>
-                    <input id="signupConfirm" name="confirmPassword" type="password"
+                    <input id="signupConfirm" name="signupConfirm" type="password"
                         placeholder="Repeat your password" minlength="8" required />
 
                     <button type="submit" class="btn-primary">Create account</button>
                 </form>
 
-
-                <p class="signup" style="margin-top:14px;">
+                <p class="signup" style="margin-top: 14px;">
                     Already have an account? <a href="login.html">Sign in</a>
                 </p>
-
 
             </div>
 
             <div class="right">
                 <img src="assets/img/IMG_0861.JPG" alt="Artisan woodcraft" />
             </div>
+
         </div>
     </div>
 
     <script type="module" src="assets/js/auth.js"></script>
-
 </body>
 
 </html>
