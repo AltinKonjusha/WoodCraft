@@ -1,0 +1,79 @@
+
+:root {
+  --brown-dark: #4a2f19;
+  --brown-mid: #795734;
+  --brown-light: #d1a76b;
+  --beige: #f8e9d2;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--brown-dark);
+}
+.navbar-brand, .nav-link {
+  color: var(--beige) !important;
+}
+.nav-link:hover {
+  color: var(--brown-light) !important;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.btn-wood {
+  background-color: var(--brown-light);
+  color: #3b2412 !important;
+  font-weight: 600;
+}
+
+/* Hero */
+.about-hero {
+  height: 60vh;
+  background-image: url('../img/IMG_0840.JPG');
+  background-size: cover;
+  background-position: center;
+  margin-top: 70px;
+  position: relative;
+}
+
+.about-hero .overlay {
+  background-color: rgba(74, 47, 25, 0.75);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+/* Values */
+.values {
+  background-color: var(--beige);
+}
+
+.values i {
+  font-size: 40px;
+  color: var(--brown-mid);
+  margin-bottom: 15px;
+}
+
+.values h5 {
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--brown-dark);
+  color: var(--beige);
+}
