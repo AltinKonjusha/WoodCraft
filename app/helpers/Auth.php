@@ -12,7 +12,6 @@ class Auth
             return false;
         }
 
-        // Prevent session fixation
         session_regenerate_id(true);
 
         $_SESSION['user'] = [
