@@ -1,0 +1,21 @@
+.navbar {
+  background-color: var(--brown-dark);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.navbar-brand, .nav-link {
+  color: var(--beige) !important;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--brown-light) !important;
+}
+.btn-wood {
+  background-color: var(--brown-light);
+  color: #3b2412 !important;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.btn-wood:hover {
+  background-color: var(--brown-mid);
+  color: #fff !important;
+}
