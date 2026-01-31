@@ -6,14 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | WoodCraft Dru</title>
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/aboutus.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
 
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -22,7 +19,6 @@
 
 <body>
 
-<!-- Navbar (EXACT SAME AS index.html) -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div style="padding-left: 0px !important; margin-left: 20px !important;" class="container">
     <img style="height: auto; width: 50px; margin-right: 60px ; margin-left: 15px !important; margin-top: 0px; " src="assets/img/Logo 3.png" href="index.html"></img>
@@ -44,7 +40,6 @@
   </div>
 </nav>
 
-<!-- Header (SAME AS index.html) -->
 <header class="hero mt-5">
   <div class="hero-overlay">
     <div class="text-center hero-text">
@@ -54,7 +49,6 @@
   </div>
 </header>
 
-<!-- About Section -->
 <section class="container py-5">
   <div class="row align-items-center g-5">
     <div class="col-md-6">
@@ -82,7 +76,6 @@
   </div>
 </section>
 
-<!-- Values -->
 <section class="values">
   <div class="container py-5">
     <div class="row text-center g-4">
@@ -109,18 +102,16 @@
   </div>
 </section>
 
-<!-- footer (EXACT SAME AS index.html) -->
 <footer class="footer text-center text-lg-start">
   <div class="container py-4">
 
     <div class="row">
-      <!-- About -->
+
       <div class="col-md-4 mb-3">
         <h5 class="footer-title">WoodCraft Boards</h5>
         <p>Premium handcrafted wooden cutting boards made with passion and natural hardwoods.</p>
       </div>
 
-      <!-- Contacts -->
       <div class="col-md-4 mb-3">
         <h5 style="margin-left: 35px;" class="footer-title">Contacts</h5>
         <ul class="footer-links">
@@ -130,7 +121,6 @@
         </ul>
       </div>
 
-      <!-- Social Icons -->
       <div class="col-md-4 mb-3">
         <h5 class="footer-title">Follow Us</h5>
         <div class="social-icons">

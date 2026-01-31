@@ -13,8 +13,8 @@
 
   <nav class="navbar navbar-expand-lg fixed-top">
       <div style="padding-left: 0px !important; margin-left: 20px !important;" class="container">
-        <img style="height: auto; width: 50px; margin-right: 60px ; margin-left: 15px !important; margin-top: 0px; " src="assets/img/Logo 3.png" href="index.html"></img>
-        <a class="navbar-brand" href="index.html">WoodCraft Dru</a>
+        <img style="height: auto; width: 50px; margin-right: 60px ; margin-left: 15px !important; margin-top: 0px; " src="assets/img/Logo 3.png" href="index.php"></img>
+        <a class="navbar-brand" href="index.php">WoodCraft Dru</a>
         <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
           <span class="navbar-toggler-icon"></span>
         </button>
