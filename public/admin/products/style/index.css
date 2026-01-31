@@ -1,0 +1,65 @@
+        body {
+            background: #f6efe6;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, #3e2a1f, #6b4b3a);
+            color: #f8e9d2;
+            border-radius: 14px;
+            padding: 32px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+        }
+
+        .admin-header h1 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .admin-header p {
+            opacity: .85;
+            margin-top: 6px;
+        }
+
+        .card-table {
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+            border: none;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background: #ede2d3;
+        }
+
+        .table th {
+            color: #3e2a1f;
+            font-weight: 600;
+        }
+
+        .btn-delete {
+            background: #8b2f2f;
+            border: none;
+        }
+
+        .btn-delete:hover {
+            background: #6f2424;
+        }
+
+        .btn-edit {
+            background: #3e2a1f;
+            border: none;
+        }
+
+        .btn-edit:hover {
+            background: #2c1b12;
+        }
+
+        .btn-create {
+            background: #f8e9d2;
+            color: #3e2a1f;
+            font-weight: 600;
+        }
+
+        .btn-create:hover {
+            background: #ede2d3;
+        }
