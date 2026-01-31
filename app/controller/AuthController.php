@@ -28,7 +28,7 @@ class AuthController {
         }
 
         if (Auth::isAdmin()) {
-            header("Location: ../public/dashboard/index.php");
+            header("Location: ../public/admin/users/index.php");
         } else {
             header("Location: ../public/index.php");
         }

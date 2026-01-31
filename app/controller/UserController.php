@@ -7,7 +7,7 @@ require_once "../helpers/Auth.php";
 
 class UserController {
 
-    private $userModel;
+    public $userModel;
 
     public function __construct() {
         $db = (new Database())->connect();
