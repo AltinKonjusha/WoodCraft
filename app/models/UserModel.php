@@ -77,6 +77,7 @@ class UserModel {
         ]);
     }
 
+
     public function delete($id) {
         $stmt = $this->conn->prepare("
             DELETE FROM {$this->table}

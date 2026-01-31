@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
     <link rel="stylesheet" href="assets/css/form.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,26 +18,44 @@
         <div class="card">
 
             <div class="left">
-                <h2>Welcome Back </h2>
+                <h2>Welcome Back</h2>
+
                 <p class="subtitle">
                     Crafted from nature. Designed for your home.<br>
                     Sign in to start seeing woodcraft.
                 </p>
 
-                <form id="loginForm" novalidate>
+                <!-- ✅ FIXED FORM -->
+                <form method="POST" action="../routes/login.php">
+
                     <label>Email</label>
-                    <input type="email" placeholder="Example@email.com" id="loginEmail">
+                    <input type="email"
+                           placeholder="Example@email.com"
+                           name="email"
+                           required>
 
                     <label>Password</label>
-                    <input type="password" placeholder="At least 8 characters" id="loginPassword">
+                    <input type="password"
+                           placeholder="At least 8 characters"
+                           name="password"
+                           required>
 
                     <div class="forgot">
                         <a href="#">Forgot Password?</a>
                     </div>
 
-                    <button class="btn-primary" type="submit"  >Sign in</button>
+                    <button class="btn-primary" type="submit">
+                        Sign in
+                    </button>
+
                 </form>
 
+                <!-- ✅ optional backend error -->
+                <?php if(isset($_GET['error'])): ?>
+                    <p style="color:red;margin-top:10px;">
+                        Invalid email or password
+                    </p>
+                <?php endif; ?>
 
                 <div class="separator"><span>Or</span></div>
 
@@ -52,9 +72,9 @@
                 </div>
 
                 <p class="signup">
-                    Don't you have an account? <a href="signup.html">Sign up</a>
+                    Don't you have an account?
+                    <a href="signup.php">Sign up</a>
                 </p>
-
 
             </div>
 
@@ -65,8 +85,5 @@
         </div>
     </div>
 
-    <script src="assets/js/auth.js"></script>
-
 </body>
-
 </html>
