@@ -9,7 +9,6 @@ Auth::requireAdmin();
 $db = (new Database())->connect();
 $userModel = new UserModel($db);
 
-// GET USER TO EDIT
 if (!isset($_GET['id'])) {
     header("Location: index.php");
     exit;
@@ -21,7 +20,6 @@ if (!$user) {
     exit;
 }
 
-// HANDLE UPDATE
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userModel->update($user['id'], [
         'name' => $_POST['name'],
