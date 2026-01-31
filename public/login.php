@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if(isset($_SESSION['user'])) {
+    header("Location: index.php");
+    exit;
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +32,6 @@
                     Sign in to start seeing woodcraft.
                 </p>
 
-                <!-- ✅ FIXED FORM -->
                 <form method="POST" action="../routes/login.php">
 
                     <label>Email</label>
@@ -50,7 +56,6 @@
 
                 </form>
 
-                <!-- ✅ optional backend error -->
                 <?php if(isset($_GET['error'])): ?>
                     <p style="color:red;margin-top:10px;">
                         Invalid email or password

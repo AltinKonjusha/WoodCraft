@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(isset($_SESSION['user'])) {
+    header("Location: index.php");
+    exit;
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +31,6 @@
         Join our community of makers and enjoy handcrafted wood pieces.
     </p>
 
-    <!-- ✅ FIXED FORM -->
     <form id="signupForm" method="POST" action="../routes/register.php" autocomplete="on">
 
         <label for="fullName">Full name</label>
@@ -44,7 +51,6 @@
 
     </form>
 
-    <!-- Backend error messages -->
     <?php if(isset($_GET['error'])): ?>
         <p style="color:red;margin-top:12px;">
             <?= htmlspecialchars($_GET['error']) ?>
