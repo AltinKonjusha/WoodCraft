@@ -101,5 +101,4 @@ class CartController
         die("Checkout failed: " . $e->getMessage());
     }
 }
-public function delete($id)
 }
