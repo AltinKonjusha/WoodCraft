@@ -1,12 +1,10 @@
     <?php
     session_start();
 
-    // Load the correct controller
     require_once __DIR__ . '/../app/controller/CartController.php';
 
     $cartController = new CartController();
 
-    // Determine action
     $action = $_POST['action'] ?? $_GET['action'] ?? null;
 
     switch ($action) {

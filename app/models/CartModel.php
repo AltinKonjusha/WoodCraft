@@ -36,7 +36,6 @@ class CartModel
         try {
             $this->conn->beginTransaction();
 
-            // 1. Calculate total
             $stmt = $this->conn->prepare("
             SELECT SUM(ci.quantity * p.price) AS total
             FROM cart_items ci
@@ -46,7 +45,6 @@ class CartModel
             $stmt->execute(['cart_id' => $cartId]);
             $total = $stmt->fetchColumn();
 
-            // 2. Create order
             $stmt = $this->conn->prepare("
             INSERT INTO orders (user_id, total)
             VALUES (:user_id, :total)
@@ -58,7 +56,6 @@ class CartModel
 
             $orderId = $this->conn->lastInsertId();
 
-            // 3. Move cart items → order_items
             $stmt = $this->conn->prepare("
             INSERT INTO order_items (order_id, product_name, product_price, quantity)
             SELECT 
@@ -75,13 +72,11 @@ class CartModel
                 'cart_id' => $cartId
             ]);
 
-            // 4. Clear cart items
             $stmt = $this->conn->prepare("
             DELETE FROM cart_items WHERE cart_id = :cart_id
         ");
             $stmt->execute(['cart_id' => $cartId]);
 
-            // 5. Mark cart as checked out
             $stmt = $this->conn->prepare("
             UPDATE {$this->table}
             SET status = 'checked_out'

@@ -1,37 +1,30 @@
 <?php
 session_start();
 
-// Get order ID from URL
 $order_id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 if (!$order_id) {
     die("Invalid order.");
 }
 
-// Correct file paths
 require_once __DIR__ . "/../app/config/database.php";
 require_once __DIR__ . "/../app/models/OrderModel.php";
 require_once __DIR__ . "/../app/models/OrderItemModel.php";
 
-// Connect to DB
 $database = new Database();
 $pdo = $database->connect();
 
-// Load models
 $orderModel = new OrderModel($pdo);
 $orderItemModel = new OrderItemModel($pdo);
 
-// Get order
 $order = $orderModel->find($order_id);
 if (!$order) {
     die("Order not found.");
 }
 
-// Optional: make sure current user owns this order
 if (!isset($_SESSION['user']) || $order['user_id'] !== $_SESSION['user']['id']) {
     die("Unauthorized access.");
 }
 
-// Get items
 $items = $orderItemModel->getByOrder($order_id);
 ?>
 <!DOCTYPE html>
