@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/../app/controller/CartController.php';
 
-// Create CartController instance
 $cartController = new CartController();
 
 $items = $cartController->index();

@@ -115,7 +115,6 @@ $products = $productModel->random(3);
   <div id="productRow" class="row g-4">
 
   <?php
-    // Shuffle products and take only 3
     shuffle($products);
     $products = array_slice($products, 0, 3);
   ?>
