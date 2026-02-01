@@ -1,29 +1,34 @@
-<?php
-session_start();
-require_once __DIR__ . '/../app/controller/CartController.php';
+    <?php
+    session_start();
 
-$cartController = new CartController();
+    // Load the correct controller
+    require_once __DIR__ . '/../app/controller/CartController.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $action = $_POST['action'] ?? '';
+    $cartController = new CartController();
 
-    switch($action){
+    // Determine action
+    $action = $_POST['action'] ?? $_GET['action'] ?? null;
+
+    switch ($action) {
         case 'add':
             $cartController->add();
-            break;
-        case 'remove':
-            if(isset($_POST['item_id'])){
-                $cartController->remove($_POST['item_id']);
-            }
             break;
         case 'update':
             $cartController->update();
             break;
+        case 'remove':
+            $id = $_POST['item_id'] ?? null;
+            if ($id) {
+                $cartController->remove($id);
+            }
+            break;
         case 'checkout':
             $cartController->checkout();
             break;
+        default:
+            header("Location: ../public/cart.php");
+            exit;
     }
-} else {
-    header("Location: WoodCraft/public/cart.php");
+
+    header("Location: ../public/cart.php");
     exit;
-}

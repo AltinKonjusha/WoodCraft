@@ -1,12 +1,12 @@
 <?php
-require_once "../config/db.php";
-require_once "../models/Order.php";
+
+require_once "../app/models/OrderModel.php";
 
 class OrderController {
     private $orderModel;
 
     public function __construct($pdo) {
-        $this->orderModel = new Order($pdo);
+        $this->orderModel = new OrderModel($pdo);
     }
 
     public function userOrders($user_id) {
