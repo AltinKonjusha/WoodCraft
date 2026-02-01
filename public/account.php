@@ -37,7 +37,6 @@ $orders = $orderModel->getByUser($user['id']);
   <h2 class="text-center mb-4">My Account</h2>
 
   <div class="row">
-    <!-- Personal Info -->
     <div class="col-lg-4 mb-4">
       <div class="card p-3">
         <h5>Personal Information</h5>
@@ -49,7 +48,6 @@ $orders = $orderModel->getByUser($user['id']);
       </div>
     </div>
 
-    <!-- Orders -->
     <div class="col-lg-8">
       <div class="card p-3">
         <h5>My Orders</h5>
