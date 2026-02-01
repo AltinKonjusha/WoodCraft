@@ -53,4 +53,18 @@ class ProductModel {
         ");
         return $stmt->execute([':id' => $id]);
     }
+    public function random($limit = 3) {
+    $stmt = $this->conn->prepare("
+        SELECT * FROM {$this->table}
+        ORDER BY RAND()
+        LIMIT :limit
+    ");
+
+    $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+}
+

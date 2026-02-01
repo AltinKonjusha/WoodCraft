@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+require_once __DIR__ . "/../app/config/database.php";
+require_once __DIR__ . "/../app/models/ProductModel.php";
+
+$db = (new Database())->connect();
+$productModel = new ProductModel($db);
+
+$products = $productModel->random(3);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,44 +107,40 @@ session_start();
 
 <section id="products" class="container py-5">
   <div id="productRow" class="row g-4">
+
+  <?php foreach ($products as $product): ?>
+
     <div class="col-md-4">
       <div class="card">
-        <img src="assets/img/IMG_0844.JPG" class="product-img" alt="Cutting Board">
+
+        <?php if(!empty($product['image'])): ?>
+          <img 
+            src="data:image/jpeg;base64,<?= base64_encode($product['image']) ?>"
+            class="product-img"
+            alt="<?= htmlspecialchars($product['name']) ?>">
+        <?php endif; ?>
+
         <div class="card-body">
-          <h5 class="card-title">Oak Serving Board</h5>
-          <p class="card-text">Handmade from solid oak, perfect for serving cheese and appetizers.</p>
-          <button class="btn btn-wood add-to-cart w-100" data-id="1" data-name="Oak Serving Board" data-price="34.99" data-image="assets/img/IMG_0844.JPG">
-            Add to Cart - €34.99
+          <h5 class="card-title"><?= htmlspecialchars($product['name']) ?></h5>
+          <p class="card-text"><?= htmlspecialchars($product['description']) ?></p>
+
+          <button class="btn btn-wood add-to-cart w-100"
+                  data-id="<?= $product['id'] ?>"
+                  data-name="<?= htmlspecialchars($product['name']) ?>"
+                  data-price="<?= $product['price'] ?>"
+                  data-image="data:image/jpeg;base64,<?= base64_encode($product['image']) ?>">
+            Add to Cart - €<?= number_format($product['price'], 2) ?>
           </button>
         </div>
+
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img src="assets/img/IMG_0592.jpg" class="product-img" alt="Cutting Board">
-        <div class="card-body">
-          <h5 class="card-title">Walnut Butcher Block</h5>
-          <p class="card-text">Durable, dense, and reversible — ideal for everyday kitchen use.</p>
-          <button class="btn btn-wood add-to-cart w-100" data-id="2" data-name="Walnut Butcher Block" data-price="31.99" data-image="assets/img/IMG_0592.jpg">
-            Add to Cart - €31.99
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img src="assets/img/IMG_0849.JPG" class="product-img" alt="Cutting Board">
-        <div class="card-body">
-          <h5 class="card-title">Maple Edge Board</h5>
-          <p class="card-text">Lightweight premium maple, resistant to knife marks and moisture.</p>
-          <button class="btn btn-wood add-to-cart w-100" data-id="3" data-name="Maple Edge Board" data-price="32.99" data-image="assets/img/IMG_0849.JPG">
-            Add to Cart - €32.99
-          </button>
-        </div>
-      </div>
-    </div>
+
+  <?php endforeach; ?>
+
   </div>
 </section>
+
 
 <footer class="footer text-center text-lg-start">
   <div class="container py-4">
