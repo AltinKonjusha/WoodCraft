@@ -51,6 +51,12 @@ session_start();
 </header>
 
 <section id="products" class="container py-5">
+  <div class="text-center mb-4">
+  <a href="products.php" class="btn btn-wood btn-lg px-5">
+    View All Products
+  </a>
+</div>
+
   <h2 class="text-center mb-5" style="color: var(--brown-dark);">Our Products</h2>
   <div class="slider">
     <div class="slides">
