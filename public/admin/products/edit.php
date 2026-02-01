@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . "/logic/edit_logic.php"; // your logic for fetching/updating products
+require_once __DIR__ . "/logic/edit_logic.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

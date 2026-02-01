@@ -1,33 +1,34 @@
 <?php
-require_once "../config/db.php";
-require_once "../models/Message.php";
+session_start();
+
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../models/MessageModel.php';
+require_once __DIR__ . '/../helpers/Auth.php';
 
 class MessageController {
+
     private $messageModel;
 
-    public function __construct($pdo) {
-        $this->messageModel = new Message($pdo);
+    public function __construct() {
+        Auth::requireLogin(); 
+
+        $db = (new Database())->connect();
+        $this->messageModel = new MessageModel($db);
     }
 
     public function store() {
-        $user_id = $_SESSION['user_id'] ?? null;
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
+
+        $user = Auth::user();
 
         $this->messageModel->create(
-            $user_id,
-            $name,
-            $email,
-            $subject,
-            $message
+            $user['id'], 
+            $_POST['name'],
+            $_POST['email'],
+            $_POST['subject'],
+            $_POST['message']
         );
 
-        echo json_encode(["success" => true]);
-    }
-
-    public function index() {
-        echo json_encode($this->messageModel->getAll());
+        header("Location: /contactus.php?success=1");
+        exit;
     }
 }

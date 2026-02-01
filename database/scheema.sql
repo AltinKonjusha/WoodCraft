@@ -35,16 +35,16 @@
         UNIQUE (cart_id, product_id)
     );
 
-    CREATE TABLE messages (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        user_id INT NULL,
-        name VARCHAR(100),
-        email VARCHAR(150) NOT NULL,
-        subject VARCHAR(150),
-        message TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
-    );
+        CREATE TABLE messages (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT NULL,
+            name VARCHAR(100),
+            email VARCHAR(150) NOT NULL,
+            subject VARCHAR(150),
+            message TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+        );
 
     CREATE TABLE orders (
         id INT AUTO_INCREMENT PRIMARY KEY,

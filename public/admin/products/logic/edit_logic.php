@@ -19,7 +19,7 @@ $product = $productModel->find($id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $imageData = $product['image'] ?? null; // keep current image if not replaced
+    $imageData = $product['image'] ?? null; 
 
     if (!empty($_FILES['image']['tmp_name'])) {
         $imageData = file_get_contents($_FILES['image']['tmp_name']);

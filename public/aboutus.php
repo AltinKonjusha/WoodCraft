@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,19 +24,24 @@
 
 <nav class="navbar navbar-expand-lg fixed-top">
   <div style="padding-left: 0px !important; margin-left: 20px !important;" class="container">
-    <img style="height: auto; width: 50px; margin-right: 60px ; margin-left: 15px !important; margin-top: 0px; " src="assets/img/Logo 3.png" href="index.html"></img>
-    <a class="navbar-brand" href="index.html">WoodCraft Dru</a>
+    <img style="height: auto; width: 50px; margin-right: 60px ; margin-left: 15px !important; margin-top: 0px;" src="assets/img/Logo 3.png">
+    <a class="navbar-brand" href="index.php">WoodCraft Dru</a>
     <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html">AddToCart</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.php">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.php">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.php">AddToCart</a></li>
         <li class="nav-item ms-lg-3">
-          <a class="btn btn-wood" href="signup.html">Sign In</a>
+          <?php if(isset($_SESSION['user'])): ?>
+            <a class="btn btn-wood" href="account.php">My Account</a>
+            <a class="btn btn-wood ms-2" href="../routes/logout.php">Logout</a>
+          <?php else: ?>
+            <a class="btn btn-wood" href="login.php">Sign In</a>
+          <?php endif; ?>
         </li>
       </ul>
     </div>
@@ -117,7 +125,7 @@
         <ul class="footer-links">
           <i class="fa fa-phone"></i><span style="padding: 0; margin: 0;">   12345679</span><br>
           <i class="fa fa-envelope"></i><span style="padding: 0; margin: 0;">   darisdumani@gmail.com</span><br>
-          <i class="fa fa-address-book"></i><a style="color: #f8e9d2; text-decoration: none;" href="contactus.html">   Contact</a>
+          <i class="fa fa-address-book"></i><a style="color: #f8e9d2; text-decoration: none;" href="contactus.php">   Contact</a>
         </ul>
       </div>
 

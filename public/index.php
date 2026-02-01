@@ -115,7 +115,6 @@ $products = $productModel->random(3);
   <div id="productRow" class="row g-4">
 
   <?php
-    // Shuffle products and take only 3
     shuffle($products);
     $products = array_slice($products, 0, 3);
   ?>
@@ -181,7 +180,7 @@ $products = $productModel->random(3);
         <h5 class="footer-title">Contacts</h5>
         <i class="fa fa-phone"></i> 12345679<br>
         <i class="fa fa-envelope"></i> darisdumani@gmail.com<br>
-        <i class="fa fa-address-book"></i> <a href="contactus.html" style="color:#f8e9d2;text-decoration:none;">Contact</a>
+        <i class="fa fa-address-book"></i> <a href="" style="color:#f8e9d2;text-decoration:none;">Contact</a>
       </div>
       <div class="col-md-4 mb-3">
         <h5 class="footer-title">Follow Us</h5>
