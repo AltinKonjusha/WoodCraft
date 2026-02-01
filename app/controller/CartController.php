@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-require_once "../config/database.php";
-require_once "../models/CartModel.php";
-require_once "../models/CartItemModel.php";
-require_once "../helpers/Auth.php";
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../models/CartModel.php';
+require_once __DIR__ . '/../models/CartItemModel.php';
+require_once __DIR__ . '/../helpers/Auth.php';
 
 class CartController {
 
-    private $cartModel;
-    private $cartItemModel;
+    public $cartModel;
+    public $cartItemModel;
 
     public function __construct() {
         $db = (new Database())->connect();
@@ -47,7 +47,7 @@ class CartController {
             $_POST['quantity'] ?? 1
         );
 
-        header("Location: /cart.php");
+        header("Location: ../public/cart.php");
         exit;
     }
 
@@ -59,7 +59,7 @@ class CartController {
             $_POST['quantity']
         );
 
-        header("Location: /cart.php");
+        header("Location: ../public/cart.php");
         exit;
     }
 
@@ -68,7 +68,7 @@ class CartController {
 
         $this->cartItemModel->remove($id);
 
-        header("Location: /cart.php");
+        header("Location: ../public/cart.php");
         exit;
     }
 
@@ -78,7 +78,7 @@ class CartController {
         $cartId = $this->getCartId();
         $this->cartModel->checkout($cartId);
 
-        header("Location: /checkout-success.php");
+        header("Location: ../routes/checkout-success.php");
         exit;
     }
 }

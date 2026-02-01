@@ -63,12 +63,10 @@ require_once __DIR__ . "/logic/index_logic.php";
                         <td><?= $product['stock'] ?></td>
                         <td class="text-end pe-4">
 
-                            <!-- EDIT BUTTON -->
                             <a href="edit.php?id=<?= $product['id'] ?>" class="btn btn-sm btn-edit text-white me-2">
                                 <i class="fa fa-pen"></i>
                             </a>
 
-                            <!-- DELETE BUTTON -->
                             <form action="" method="POST" class="d-inline">
                                 <input type="hidden" name="id" value="<?= $product['id'] ?>">
                                 <button class="btn btn-sm btn-delete text-white"

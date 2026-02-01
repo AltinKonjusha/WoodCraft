@@ -1,8 +1,8 @@
 <?php
 
 class CartModel {
-    private $conn;
-    private $table = "carts";
+    public $conn;
+    public $table = "carts";
 
     public function __construct($db) {
         $this->conn = $db;

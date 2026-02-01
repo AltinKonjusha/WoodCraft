@@ -34,9 +34,9 @@ $products = $productModel->random(3);
 
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="aboutus.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="cart.html">AddToCart</a></li>
+        <li class="nav-item"><a class="nav-link" href="aboutus.php">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contactus.php">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.php">AddToCart</a></li>
         <li class="nav-item ms-lg-3">
           <?php if(isset($_SESSION['user'])): ?>
             <a class="btn btn-wood" href="account.php">My Account</a>
@@ -114,29 +114,50 @@ $products = $productModel->random(3);
 <section id="products" class="container py-5">
   <div id="productRow" class="row g-4">
 
+  <?php
+    // Shuffle products and take only 3
+    shuffle($products);
+    $products = array_slice($products, 0, 3);
+  ?>
+
   <?php foreach ($products as $product): ?>
 
     <div class="col-md-4">
       <div class="card">
 
-        <?php if(!empty($product['image'])): ?>
+        <?php
+          $imageSrc = null;
+          if (!empty($product['image'])) {
+              $imageSrc = "data:image/jpeg;base64," . base64_encode($product['image']);
+          }
+        ?>
+
+        <?php if ($imageSrc): ?>
           <img 
-            src="data:image/jpeg;base64,<?= base64_encode($product['image']) ?>"
+            src="<?= $imageSrc ?>"
             class="product-img"
             alt="<?= htmlspecialchars($product['name']) ?>">
         <?php endif; ?>
 
         <div class="card-body">
-          <h5 class="card-title"><?= htmlspecialchars($product['name']) ?></h5>
-          <p class="card-text"><?= htmlspecialchars($product['description']) ?></p>
 
-          <button class="btn btn-wood add-to-cart w-100"
-                  data-id="<?= $product['id'] ?>"
-                  data-name="<?= htmlspecialchars($product['name']) ?>"
-                  data-price="<?= $product['price'] ?>"
-                  data-image="data:image/jpeg;base64,<?= base64_encode($product['image']) ?>">
-            Add to Cart - €<?= number_format($product['price'], 2) ?>
-          </button>
+          <h5 class="card-title">
+            <?= htmlspecialchars($product['name']) ?>
+          </h5>
+
+          <p class="card-text">
+            <?= htmlspecialchars($product['description']) ?>
+          </p>
+
+          <form action="../routes/cart.php" method="POST">
+              <input type="hidden" name="action" value="add">
+              <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+              <input type="hidden" name="quantity" value="1">
+              <button type="submit" class="btn btn-wood w-100">
+                  Add to Cart - €<?= number_format($product['price'], 2) ?>
+              </button>
+          </form>
+
         </div>
 
       </div>
@@ -146,6 +167,7 @@ $products = $productModel->random(3);
 
   </div>
 </section>
+
 
 
 <footer class="footer text-center text-lg-start">

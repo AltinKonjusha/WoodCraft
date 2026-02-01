@@ -13,19 +13,15 @@ function showSlide(index) {
   const offset = -currentIndex * 100;
   document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
 
-  // update dots
   dots.forEach(dot => dot.classList.remove('active'));
   dots[currentIndex].classList.add('active');
 }
 
-// Next / Prev Buttons
 nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
 prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
 
-// Dots navigation
 dots.forEach((dot, idx) => {
   dot.addEventListener('click', () => showSlide(idx));
 });
 
-// Auto slide every 5 seconds
 setInterval(() => showSlide(currentIndex + 1), 5000);

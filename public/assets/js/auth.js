@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = document.getElementById("signupPassword").value;
             const confirm = document.getElementById("signupConfirm").value;
 
-            // Prevent submit only if invalid
             if (!fullName || !email || !password || !confirm) {
                 e.preventDefault();
                 alert("All fields must be filled.");
@@ -35,8 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // ✅ Remove any alert or form reset
-            // Form will now submit to PHP backend
         });
     }
 
@@ -69,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // ✅ Valid input → allow form submit to backend
         });
     }
 
