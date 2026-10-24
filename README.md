@@ -29,8 +29,6 @@ WoodCraft/
 └── README.md     # Project documentation
 ```
 
-## Getting Started
-
 ### Prerequisites
 
 Make sure you have the following installed:
@@ -43,56 +41,43 @@ Make sure you have the following installed:
 
 ### Installation
 
-1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/AltinKonjusha/WoodCraft.git
-   ```
 
-2. Navigate to the project directory:
-
-   ```bash
-   cd WoodCraft
-   ```
-
-3. Install PHP dependencies:
+1. Install PHP dependencies:
 
    ```bash
    composer install
    ```
 
-4. Create your environment configuration:
+2. Create your environment configuration:
 
    ```bash
    cp .env.example .env
    ```
 
-   On Windows, you can also copy `.env.example` to `.env` manually.
-
-5. Generate the application key:
+ 
+3. Generate the application key:
 
    ```bash
    php artisan key:generate
    ```
 
-6. Configure your database connection in the `.env` file.
+4. Configure your database connection in the `.env` file.
 
-7. Run database migrations:
+5. Run database migrations:
 
    ```bash
    php artisan migrate
    ```
 
-8. If the project includes frontend dependencies, install them:
+6. If the project includes frontend dependencies, install them:
 
    ```bash
    npm install
    ```
 
-9. Start the development server:
+7. Start the development server:
 
    ```bash
    php artisan serve
    ```
-
-10. Open the local URL displayed in your terminal, usually `http://127.0.0.1:8000`.
